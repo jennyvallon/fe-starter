@@ -1,0 +1,131 @@
+{
+  "name": "fe-starter",
+  "version": "0.1.0",
+  "private": false,
+  "dependencies": {
+    "glob-fs": "0.1.7",
+    "lodash": "4.17.4",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-redux": "5.0.6",
+    "react-router": "4.2.0",
+    "react-router-dom": "4.2.2",
+    "react-scripts": "1.1.0",
+    "redux": "3.7.2",
+    "redux-promise-middleware": "5.0.0",
+    "redux-thunk": "2.2.0"
+  },
+  "scripts": {
+    "start": ". ._ignore/env.sh && react-scripts start",
+    "build": "react-scripts build",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "test": "eslint . && jest",
+    "view-coverage": "open coverage/lcov-report/index.html",
+    "update-snapshots": "jest --updateSnapshot",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
+    "enzyme-to-json": "3.3.1",
+    "eslint": "4.17.0",
+    "eslint-plugin-react": "7.6.1",
+    "identity-obj-proxy": "3.0.0",
+    "istanbul": "0.4.5",
+    "jest": "20.0.4",
+    "react-test-renderer": "16.2.0"
+  },
+  "jest": {
+    "bail": true,
+    "verbose": true,
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/._ignore/",
+      "/public/",
+      "/.gitnore/",
+      "/__snapshots__/",
+      "/assets/",
+      "/*.css/"
+    ],
+    "coverageReporters": ["json", "lcov", "text-summary"],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "setupFiles": [
+      "./src/index/jest.js"
+    ],
+    "snapshotSerializers": [
+      "./node_modules/enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "identity-obj-proxy"
+    }
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "eslintIgnore": [
+    "/coverage"
+  ],
+  "eslintConfig": {
+    "globals": {
+      "shallow": true,
+      "render": true,
+      "mount": true,
+      "React": true
+    },
+    "rules": {
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "array-bracket-spacing": [ 2, "never"],
+        "arrow-parens": [ 2,"always"],
+        "arrow-spacing": [ 2,{"before": true, "after": true}],
+        "brace-style": [ 2, "1tbs",{"allowSingleLine": false}],
+        "comma-spacing": [2, {"before": false, "after": true}],
+        "curly": [ 2, "all"],
+        "indent": [2, 4, { "SwitchCase": 1, "VariableDeclarator": 1}],
+        "key-spacing": [2, {"beforeColon": false, "afterColon": true}],
+        "keyword-spacing": 2,
+        "linebreak-style": [ 2, "unix"],
+        "no-console": 0,
+        "no-trailing-spaces": 2,
+        "object-curly-spacing": [ 2, "never"],
+        "one-var": [ 2, "always"],
+        "prefer-template": 2,
+        "quote-props": [ 2, "as-needed"],
+        "quotes": [ 2, "single"],
+        "semi": [ 2, "always"],
+        "space-before-blocks": [ 2, "always"],
+        "space-before-function-paren": [ 2, {"anonymous": "always", "named": "never"}],
+        "space-infix-ops": [2, {"int32Hint": false}]
+      },
+    "plugins": ["react"],
+    "extends": [
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true,
+        "spread":true,
+        "experimentalObjectRestSpread": true
+      }
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest":true
+    }
+  }
+}
